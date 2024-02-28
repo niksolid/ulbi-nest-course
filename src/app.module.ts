@@ -4,19 +4,21 @@ import { UsersModule } from './users/users.module';
 import { ConfigModule } from "@nestjs/config";
 import * as process from "process";
 
+console.log('haaaaaaaaaaaaaaa')
+console.log(`.${process.env.NODE_ENV}.env`)
 @Module({
   controllers: [],
   providers: [],
   imports: [
     ConfigModule.forRoot({
-      envFilePath: '.env'
+      envFilePath: `.${process.env.NODE_ENV}.env`
     }),
     SequelizeModule.forRoot({
       dialect: 'postgres',
       host: process.env.POSTGRES_HOST,
       port: Number(process.env.POSTGRESS_PORT),
       username: process.env.POSTGRES_USER,
-      password: process.env.POSTGRES_PASSWORD,
+      password: String(process.env.POSTGRES_PASSWORD),
       database: process.env.POSTGRES_DB,
       models: [],
       autoLoadModels: true
