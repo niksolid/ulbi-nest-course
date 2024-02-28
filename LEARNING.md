@@ -22,5 +22,17 @@ nest generate service users
 ```
 
 ## STEP 3
-Устанавливаем  @nestjs/config и в app.module.ts подключаем ConfigModule
-Конфигурируем .env файлы
+- Устанавливаем  @nestjs/config и в app.module.ts подключаем ConfigModule
+- Устанавливаем cross-env для разных конфигураций (dev or prod)
+- Конфигурируем .env файлы
+
+## STEP 4
+Описываем users.model.ts
+
+Используем sequelize-typescript
+
+Подключаем модель в app.module.ts и user.module.ts
+
+В pg admin мы можем увидеть появившиеся поля:
+
+![Где смотреть](.md-img/pgadmin-columns.png)

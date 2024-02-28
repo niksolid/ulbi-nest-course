@@ -1,11 +1,10 @@
 import { Module } from "@nestjs/common";
 import { SequelizeModule } from "@nestjs/sequelize";
-import { UsersModule } from './users/users.module';
+import { UsersModule } from "./users/users.module";
 import { ConfigModule } from "@nestjs/config";
 import * as process from "process";
+import { User } from "src/users/users.model";
 
-console.log('haaaaaaaaaaaaaaa')
-console.log(`.${process.env.NODE_ENV}.env`)
 @Module({
   controllers: [],
   providers: [],
@@ -14,16 +13,17 @@ console.log(`.${process.env.NODE_ENV}.env`)
       envFilePath: `.${process.env.NODE_ENV}.env`
     }),
     SequelizeModule.forRoot({
-      dialect: 'postgres',
+      dialect: "postgres",
       host: process.env.POSTGRES_HOST,
       port: Number(process.env.POSTGRESS_PORT),
       username: process.env.POSTGRES_USER,
       password: String(process.env.POSTGRES_PASSWORD),
       database: process.env.POSTGRES_DB,
-      models: [],
+      models: [User],
       autoLoadModels: true
     }),
     UsersModule
   ]
 })
-export class AppModule {}
+export class AppModule {
+}
