@@ -1,9 +1,9 @@
-## STEP 1 
+## STEP 1. Настройка проекта 
 Создаем структуру без БД, смотрим как пишутся роуты через файлы 
 app.service и app.controller
 
-## STEP 2
-Подключаем БД postrgesql
+## STEP 2. PostgreSQL
+Подключаем БД PostgrgeSQL
 
 Описываем SequelizeModule.forRoot
 
@@ -36,3 +36,32 @@ nest generate service users
 В pg admin мы можем увидеть появившиеся поля:
 
 ![Где смотреть](.md-img/pgadmin-columns.png)
+
+## STEP 5. Swagger
+Устанавливаем  @nestjs/swagger swagger-ui-express
+
+```bash
+npm i @nestjs/swagger swagger-ui-express       
+```
+
+Создаем config проекта в main.ts (экземпляр для создания Документации swagger)
+
+Создаем и инициализируем экземпляр документа (SwaggerModule)
+
+Используем декораторы swagger чтобы задокументировать наши методы
+
+- В users.model.ts используем ApiProperty
+- В users.controller.ts используем ApiTags, ApiOperation,
+- В create-user.dto.ts так же используем ApiProperty
+
+## STEP 6. Роли пользователя
+Создаем сервис, контроллер и модуль для ролей
+
+```bash
+nest generate module roles
+nest generate service roles
+nest generate controller roles
+```
+
+Таблица роли будет иметь 2 поля value и description.
+Заполняем модуль по аналогии c users
