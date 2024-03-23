@@ -191,3 +191,16 @@ npm i class-validator class-transformer
 Для обработки ошибок создаем папку exceptions и файл validation.exception
 
 Проверим @UsePipes на примере запроса создания пользователя. Добавим декоратор в users.controller
+
+## STEP 11. Глобальные пайпы.
+
+В main.ts пишем 
+````ts
+app.useGlobalPipes(new ValidationPipe())
+````
+и в нее через запятую добавляем все необходимые пайпы
+
+Убираем из user.controller.ts декоратор @UsePipes(ValidationPipe)
+
+
+
