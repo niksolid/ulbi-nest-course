@@ -1,9 +1,12 @@
 import { forwardRef, Module } from '@nestjs/common'
+import { JwtModule } from '@nestjs/jwt'
+
+import * as process from 'process'
+
 import { AuthController } from './auth.controller'
 import { AuthService } from './auth.service'
-import { UsersModule } from 'src/users/users.module'
-import { JwtModule } from '@nestjs/jwt'
-import * as process from 'process'
+
+import { UsersModule } from 'users/users.module'
 
 @Module({
   controllers: [AuthController],

@@ -6,10 +6,11 @@ import {
   Injectable,
   UnauthorizedException,
 } from '@nestjs/common'
-import { Observable } from 'rxjs'
-import { JwtService } from '@nestjs/jwt'
 import { Reflector } from '@nestjs/core'
-import { ROLES_KEY } from 'src/auth/roles-auth.decorator'
+import { JwtService } from '@nestjs/jwt'
+
+import { ROLES_KEY } from 'auth/roles-auth.decorator'
+import { Observable } from 'rxjs'
 
 @Injectable()
 export class RolesGuard implements CanActivate {
