@@ -202,5 +202,32 @@ app.useGlobalPipes(new ValidationPipe())
 
 Убираем из user.controller.ts декоратор @UsePipes(ValidationPipe)
 
+## STEP 12. Посты. OneToMany. @HasMany. Работа с файлами.
 
+Создаем новый модуль: posts
 
+```bash
+nest generate module posts
+nest generate service posts
+touch posts/posts.model.ts
+```
+
+Описываем posts.model.ts, нововведением здесь будет сточка:
+
+@BelongsTo(() => User)
+
+Что означает что один пользователь может иметь много постов.
+
+В users.model в свою очередь добавим декоратор @HasMany(() => Post)
+
+### Работа с файлами.
+В posts.controller используем новый декоратор @UploadedFile
+
+Внутри posts.service создаем функцию create 
+
+Создаем новый сервис:
+```bash
+nest generate module files 
+nest generate service files 
+touch posts/posts.model.ts
+```
