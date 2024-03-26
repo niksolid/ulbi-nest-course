@@ -4,6 +4,7 @@ import { SequelizeModule } from '@nestjs/sequelize'
 
 import * as process from 'process'
 
+import { FilesModule } from './files/files.module'
 import { Post } from './posts/posts.model'
 import { PostsModule } from './posts/posts.module'
 
@@ -13,7 +14,6 @@ import { RolesModule } from 'roles/roles.module'
 import { UserRoles } from 'roles/user-roles.model'
 import { User } from 'users/users.model'
 import { UsersModule } from 'users/users.module'
-import { FilesModule } from './files/files.module';
 
 @Module({
   controllers: [],

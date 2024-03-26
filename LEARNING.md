@@ -231,3 +231,11 @@ nest generate module files
 nest generate service files 
 touch posts/posts.model.ts
 ```
+
+Устанавливаем uuid
+
+```bash
+npm i uuid
+```
+
+В files.service импортируем fs и path, а так же uuid

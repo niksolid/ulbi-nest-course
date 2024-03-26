@@ -45,6 +45,7 @@ export class Post extends Model<Post, PostCreationAttrs> {
   image: string
 
   @ForeignKey(() => User)
+  @Column({ type: DataType.INTEGER })
   userId: number
 
   @BelongsTo(() => User)

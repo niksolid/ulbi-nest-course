@@ -4,7 +4,6 @@ import {
   BelongsToMany,
   Column,
   DataType,
-  ForeignKey,
   HasMany,
   Model,
   Table,
@@ -49,10 +48,6 @@ export class User extends Model<User, UserCreationAttrs> {
 
   @BelongsToMany(() => Role, () => UserRoles)
   roles: Role[]
-
-  @ForeignKey(() => User)
-  @Column({ type: DataType.INTEGER })
-  userId: number
 
   @HasMany(() => Post)
   posts: Post[]
