@@ -239,3 +239,20 @@ npm i uuid
 ```
 
 В files.service импортируем fs и path, а так же uuid
+
+После того как мы описали все функции и методы тестируем запрос через postman
+Поскольку мы используем загрузку файлов, в этот раз отправим его через form-data
+
+Мы сохранили файл, чтобы можно было по нему обратиться как по ссылке нужен специальный модуль
+Устанавливаем:
+
+```bash
+npm i --save @nestjs/serve-static
+```
+
+в app.module добавляем новый импорт:
+```ts
+ServeStaticModule.forRoot({
+  rootPath: path.resolve(__dirname, 'static'),
+})
+```
