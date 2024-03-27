@@ -256,3 +256,15 @@ ServeStaticModule.forRoot({
   rootPath: path.resolve(__dirname, 'static'),
 })
 ```
+
+## STEP 13. Docker.
+
+Создаем Dockerfile и docker-compose.yml
+Внутри docker-compose.yml будет 2 сервиса: main и postgresql
+
+Когда файлы будут описаны запускаем 2 комманды:
+
+```bash
+docker-compose build
+docker-compose up
+```
